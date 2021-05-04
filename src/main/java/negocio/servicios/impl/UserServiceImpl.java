@@ -1,18 +1,14 @@
 package negocio.servicios.impl;
 
-import java.sql.SQLException;
-import java.util.LinkedList;
-import java.util.List;
-
 import negocio.servicios.UserService;
-import negocio.vo.Usuario;
-import persistencia.dao.impl.TiendaDAOImpl;
+import persistencia.UserDAO;
+import persistencia.dao.impl.UserDAOImpl;
 
 public class UserServiceImpl implements UserService {
 
+	UserDAO userDao = new UserDAOImpl();
 	public boolean login(String username,String password) {
-		return false;
-		
+		return userDao.login(username, password);		
 	}
 
 }
